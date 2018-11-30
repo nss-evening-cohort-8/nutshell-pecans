@@ -1,0 +1,12 @@
+{
+  "task1": {
+    "userUid": "12345",
+    "task": "Take out garbage",
+    "isCompleted": true
+  },
+  "task2": {
+    "userUid": "12345",
+    "task": "Do some HW",
+    "isCompleted": false
+  }
+}
