@@ -5,13 +5,14 @@ Nutshell is a new product offering that you have been tasked with building. It's
 You will be utilizing all of the skills and concepts that you've learned up to this point in the course.
 
 1. Functions
-1. Databases/API
+1. Databases/API/HTTP verbs
 1. Github
 1. Objects
 1. CSS
 1. Handling user events
 1. Data entry/editing
-1. ES6 Modules
+1. Modular development
+1. Task automation: bundling with webpack and linting
 1. Relational data
 
 ## Firebase
