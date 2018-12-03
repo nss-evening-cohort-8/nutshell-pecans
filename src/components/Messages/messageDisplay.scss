@@ -1,0 +1,25 @@
+#messages {
+ background-color: lightgrey;
+ border-radius: 5px;
+ margin: 20px;
+ padding: 5px;
+ #newMessages {
+   border: 1px solid slategray;
+   border-radius: 5px;
+   background-color: white;
+   margin-bottom: 5px;
+   height: 120px;
+   width: 100%;
+ }
+ #expandMessages {
+   background-color: transparent;
+   border: 0;
+ }
+ #expandMessages:hover {
+  color: white;
+  background-color: slategray;
+ }
+ #messageInputArea {
+   border: 1px solid slategray;
+ }
+}
