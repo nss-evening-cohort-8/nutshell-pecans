@@ -32,7 +32,6 @@ const createNavbar = () => {
   const domString = `
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#"><img src="${logo}"/></a>
-     
       <a id="navbar-button-logout" class="nav-link">LOGOUT</a>
       <a id="navbar-button-dashboard" class="nav-link">DASHBOARD</a>
     

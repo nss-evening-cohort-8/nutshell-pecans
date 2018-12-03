@@ -10,7 +10,7 @@ const checkLoginStatus = (initializeEventsPage) => {
       $('#messages').show();
       $('#articles').show();
       $('#weather').show();
-      $('navbar-button-logout').show();
+      $('#navbar-button-logout').show();
       initializeEventsPage();
     } else {
       $('#events').hide();
@@ -18,7 +18,7 @@ const checkLoginStatus = (initializeEventsPage) => {
       $('#articles').hide();
       $('#weather').hide();
       $('#auth').show();
-      $('navbar-button-logout').hide();
+      $('#navbar-button-logout').hide();
     }
   });
 };
