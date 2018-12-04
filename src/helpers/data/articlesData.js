@@ -13,7 +13,6 @@ const getAllArticles = uid => new Promise((resolve, reject) => {
         Object.keys(articlesObject).forEach((articleId) => {
           articlesObject[articleId].id = articleId;
           articlesArray.push(articlesObject[articleId]);
-          console.log(articlesArray);
         });
       }
       resolve(articlesArray);
