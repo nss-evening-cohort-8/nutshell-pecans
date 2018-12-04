@@ -5,7 +5,6 @@ import firebase from 'firebase/app';
 import apiKeys from '../db/apiKeys.json';
 
 import './index.scss';
-import realNiceComponent from './components/RealNiceComponent/RealNiceComponent';
 import messageDisplay from './components/Messages/messageDisplay';
 
 
@@ -19,6 +18,7 @@ const initializeApp = () => {
   navbar();
   authHelpers.checkLoginStatus();
   loginButton();
+  messageDisplay();
 };
 
 initializeApp();

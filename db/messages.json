@@ -1,14 +1,38 @@
 {
   "message1": {
-    "userUid": "12345",
+    "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
     "message": "What's up?",
     "timestamp": 1528763298535,
     "isEdited": false
   },
   "message2": {
-    "userUid": "67890",
+    "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
     "message": "The Sky",
     "timestamp": 1528763298536,
     "isEdited": true
+  },
+  "message3": {
+    "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
+    "message": "Is the moon a planet or a star?",
+    "timestamp": 1528763298537,
+    "isEdited":false
+  },
+  "message4": {
+    "uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
+    "message": "I think the moon is a star.",
+    "timestamp": 1528763298538,
+    "isEdited":false
+  },
+  "message5": {
+    "uid": "6g2ZpJtlGtaiH69WB3eC8rD4Orf2",
+    "message": "No. The moon is a planet.",
+    "timestamp": 1528763298539,
+    "isEdited":false
+  },
+  "message6": {
+    "uid": "S1qErs5XzxNnkUgfYEu2zXlTEv02",
+    "message": "The moon is a moon.  A moon is a natural satalite.",
+    "timestamp": 1528763298540,
+    "isEdited":false
   }
 }
