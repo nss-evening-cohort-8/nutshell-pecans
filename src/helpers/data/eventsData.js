@@ -21,10 +21,23 @@ const getAllEvents = uid => new Promise((resolve, reject) => {
     });
 });
 
+const getSingleEvent = eventId => new Promise((resolve, reject) => {
+  axios.get(`${firebaseUrl}/events/${eventId}.json`)
+    .then((result) => {
+      const singleEvent = result.data;
+      singleEvent.id = eventId;
+      resolve(singleEvent);
+    })
+    .catch((error) => {
+      reject(error);
+    });
+});
+
 const deleteEvent = idToDelete => axios.delete(`${apiKeys.firebaseKeys.databaseURL}/events/${idToDelete}.json`);
 
 export default {
   getAllEvents,
   deleteEvent,
+  getSingleEvent,
 
 };
