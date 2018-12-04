@@ -1,12 +1,38 @@
 {
   "weather1": {
-    "userUid": "12345",
+    "uid": "6g2ZpJtlGtaiH69WB3eC8rD4Orf2",
     "zipcode": 94598,
     "isCurrent": true
   },
   "weather2": {
-    "userUid": "12345",
+    "uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
     "zipcode": 37215,
     "isCurrent": false
+  },
+  "weather3": {
+    "uid": "S1qErs5XzxNnkUgfYEu2zXlTEv02",
+    "zipcode": 37215,
+    "isCurrent": false
+  },
+  "weather4": {
+    "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
+    "zipcode": 37215,
+    "isCurrent": false
+  },
+  "weather5": {
+    "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
+    "zipcode": 37215,
+    "isCurrent": false
+  },
+  "weather6": {
+    "uid": "6g2ZpJtlGtaiH69WB3eC8rD4Orf2",
+    "zipcode": 37215,
+    "isCurrent": false
+  },
+  "weather7": {
+    "uid": "6g2ZpJtlGtaiH69WB3eC8rD4Orf2",
+    "zipcode": 37214,
+    "isCurrent": false
   }
+
 }
