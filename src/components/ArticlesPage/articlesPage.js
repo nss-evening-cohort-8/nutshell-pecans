@@ -20,7 +20,6 @@ const articlesBuilder = (articlesArray) => {
   });
 };
 
-
 const articlesPage = () => {
   const uid = authHelpers.getCurrentUid();
   articlesData.getAllArticles(uid)
@@ -32,8 +31,26 @@ const articlesPage = () => {
     });
 };
 
+const deleteArticle = (e) => {
+  // firebase id
+  const idToDelete = e.target.dataset.deleteId;
+  articlesData.deleteArticle(idToDelete)
+    .then(() => {
+      articlesPage();
+      $('#articles').html('');
+    })
+    .catch((error) => {
+      console.error('error in deleting article', error);
+    });
+};
+
+const bindEvents = () => {
+  $('body').on('click', '.deleteButton', deleteArticle);
+};
+
 const initializeArticlesPage = () => {
   articlesPage();
+  bindEvents();
 };
 
 export default initializeArticlesPage;
