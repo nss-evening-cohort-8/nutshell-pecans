@@ -5,8 +5,9 @@ import getAllZips from '../../helpers/data/weatherData';
 const printAllZips = () => {
   const cardString = `
   <div class="card">
+  <p></p>
   <div class="card-body">
-    This is some text within a card body.
+    
   </div>
 </div>
   `;
