@@ -1,6 +1,8 @@
 import $ from 'jquery';
+import authHelpers from '../../helpers/authHelpers';
+import getAllZips from '../../helpers/data/weatherData';
 
-const printSingleZip = () => {
+const printAllZips = () => {
   const cardString = `
   <div class="card">
   <div class="card-body">
@@ -11,8 +13,20 @@ const printSingleZip = () => {
   $('#weather').html(cardString);
 };
 
+const weatherPage = () => {
+  const uid = authHelpers.getCurrentUid();
+  getAllZips(uid)
+    .then((weatherArray) => {
+      printAllZips(weatherArray);
+    })
+    .catch((error) => {
+      console.error('error in getting weather', error);
+    });
+};
+
 const initializeWeatherPage = () => {
-  printSingleZip();
+  printAllZips();
+  weatherPage();
 };
 
 export default initializeWeatherPage;

@@ -21,4 +21,4 @@ const getAllZips = () => new Promise((resolve, reject) => {
     });
 });
 
-export default getAllZips;
+export default { getAllZips };
