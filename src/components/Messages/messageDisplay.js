@@ -49,7 +49,6 @@ const deleteMessage = (e) => {
     });
 };
 
-
 const bindMessageEvents = () => {
   $('body').on('click', '.deleteMessageButton', deleteMessage);
 };
