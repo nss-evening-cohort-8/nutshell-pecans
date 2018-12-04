@@ -11,12 +11,12 @@ import navbar from './components/Navbar/navbar';
 import loginButton from './components/Auth/auth';
 import authHelpers from './helpers/authHelpers';
 import eventsPage from './components/EventsPage/eventsPage';
-
+import initializeArticlesPage from './components/ArticlesPage/articlesPage';
 
 const initializeApp = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   navbar();
-  authHelpers.checkLoginStatus(eventsPage);
+  authHelpers.checkLoginStatus(eventsPage, initializeArticlesPage);
   loginButton();
 };
 
