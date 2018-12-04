@@ -1,14 +1,38 @@
 {
   "event1": {
-    "userUid": "12345",
+    "Uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
     "event": "Bonfire at the beach",
     "startDate": 1528763298535,
     "location": "Ocean Beach"
   },
   "event2": {
-    "userUid": "12345",
+    "Uid": "6g2ZpJtlGtaiH69WB3eC8rD4Orf2",
     "event": "Nap",
     "startDate": 1528763298536,
     "location": "NSS"
+  },
+  "event3": {
+    "Uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
+    "event": "Party Time",
+    "startDate": 1528763298535,
+    "location": "Party House"
+  },
+  "event4": {
+    "Uid": "S1qErs5XzxNnkUgfYEu2zXlTEv02",
+    "event": "Walmart Parking Lot Party",
+    "startDate": 1528763298535,
+    "location": "Walmart"
+  },
+  "event5": {
+    "Uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
+    "event": "Bonfire at the beach part 2",
+    "startDate": 1528763298535,
+    "location": "Ocean Beach Sidewalk"
+  },
+  "event6": {
+    "Uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
+    "event": "Bonfire at the beach part 3",
+    "startDate": 1528763298535,
+    "location": "Ocean Beach Pool Deck"
   }
 }
