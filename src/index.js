@@ -10,6 +10,7 @@ import './index.scss';
 import navbar from './components/Navbar/navbar';
 import loginButton from './components/Auth/auth';
 import authHelpers from './helpers/authHelpers';
+import initializeWeatherPage from './components/Weather/weatherComponent';
 
 
 const initializeApp = () => {
@@ -17,6 +18,7 @@ const initializeApp = () => {
   navbar();
   authHelpers.checkLoginStatus();
   loginButton();
+  initializeWeatherPage();
 };
 
 initializeApp();
