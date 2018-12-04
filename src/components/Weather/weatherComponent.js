@@ -17,6 +17,7 @@ const weatherPage = () => {
   const uid = authHelpers.getCurrentUid();
   getAllZips(uid)
     .then((weatherArray) => {
+      console.log(weatherArray);
       printAllZips(weatherArray);
     })
     .catch((error) => {

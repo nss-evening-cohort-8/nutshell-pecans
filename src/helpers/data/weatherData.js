@@ -3,8 +3,8 @@ import apiKeys from '../../../db/apiKeys';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getAllZips = () => new Promise((resolve, reject) => {
-  axios.get(`${firebaseUrl}/weather.json`)
+const getAllZips = uid => new Promise((resolve, reject) => {
+  axios.get(`${firebaseUrl}/weather.json?orderBy="uid"&equalTo="${uid}"`)
     .then((results) => {
       const weatherObject = results.data;
       const weatherArray = [];
@@ -21,4 +21,4 @@ const getAllZips = () => new Promise((resolve, reject) => {
     });
 });
 
-export default { getAllZips };
+export default getAllZips;
