@@ -21,11 +21,10 @@ const getAllEvents = uid => new Promise((resolve, reject) => {
     });
 });
 
+const deleteEvent = idToDelete => axios.delete(`${apiKeys.firebaseKeys.databaseURL}/events/${idToDelete}.json`);
+
 export default {
   getAllEvents,
-  // getSingleFriend,
-  // deleteFriend,
-  // addNewFriend,
-  // updateFriend,
-  // updatedIsAvoiding,
+  deleteEvent,
+
 };
