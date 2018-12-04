@@ -56,28 +56,28 @@ const eventsPage = () => {
     });
 };
 
-// const deleteEvent = (e) => {
-//   // firebase id
-//   const idToDelete = e.target.dataset.deleteId;
-//   axios.delete(`${apiKeys.firebaseKeys.databaseURL}/events/${idToDelete}.json`)
-//     .then(() => {
-//       eventsPage();
-//       $('#single-event-container').html('');
-//     })
-//     .catch((error) => {
-//       console.error('error in deleting event', error);
-//     });
-// };
+const deleteEvent = (e) => {
+  // firebase id
+  const idToDelete = e.target.dataset.deleteId;
+  eventsData.deleteEvent(idToDelete)
+    .then(() => {
+      eventsPage();
+      $('#single-event-container').html('');
+    })
+    .catch((error) => {
+      console.error('error in deleting event', error);
+    });
+};
 
-// const bindEvents = () => {
-//   $('body').on('click', '.dropdown-item', getSingleEvent);
-//   $('body').on('click', '.delete-btn', deleteEvent);
-//   $('body').on('change', '.is-avoiding-checkbox', updateIsAvoiding);
-// };
+const bindEvents = () => {
+  //   $('body').on('click', '.dropdown-item', getSingleEvent);
+  $('body').on('click', '.deleteButton', deleteEvent);
+  //   $('body').on('change', '.is-avoiding-checkbox', updateIsAvoiding);
+};
 
 const initializeEventsPage = () => {
   eventsPage();
-  // bindEvents();
+  bindEvents();
 };
 
 export default initializeEventsPage;
