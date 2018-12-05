@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import 'bootstrap';
 import firebase from 'firebase/app';
 import apiKeys from '../db/apiKeys.json';
@@ -11,6 +11,7 @@ import authHelpers from './helpers/authHelpers';
 import initializeWeatherPage from './components/Weather/weatherComponent';
 import initializeArticlesPage from './components/ArticlesPage/articlesPage';
 import eventsPage from './components/EventsPage/eventsPage';
+import buildAddForm from './components/AddEditArticles/addEditArticles';
 
 const initializeUserApp = () => {
   eventsPage();
