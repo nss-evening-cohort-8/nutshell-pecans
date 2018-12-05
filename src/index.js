@@ -11,11 +11,13 @@ import buildAddForm from './components/AddEditEvents/addEditEvents';
 import initializeWeatherPage from './components/Weather/weatherComponent';
 import initializeArticlesPage from './components/ArticlesPage/articlesPage';
 import eventsPage from './components/EventsPage/eventsPage';
+import addEditMessageEvents from './components/Messages/addEditMessage';
 
 const initializeUserApp = () => {
   eventsPage();
   initializeArticlesPage();
   messageDisplay();
+  addEditMessageEvents();
   initializeWeatherPage();
   $('body').on('click', '#buildEventInput', buildAddForm);
 };

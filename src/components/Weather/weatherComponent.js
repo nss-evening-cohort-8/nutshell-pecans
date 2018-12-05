@@ -1,17 +1,17 @@
 import $ from 'jquery';
 import authHelpers from '../../helpers/authHelpers';
-import getAllZips from '../../helpers/data/weatherData';
+import weatherData from '../../helpers/data/weatherData';
 
 const printAllZips = (weatherArray) => {
   let cardString = '';
   weatherArray.forEach((weather) => {
     cardString += `
       <div class="card">
-      <p></p>
-      <div class="card-body">
-        <h5>${weather.zipcode}</h5>
+        <div class="card-body">
+          <h5>${weather.zipcode}</h5>
+          <button class="btn btn-danger delete-weather-btn" data-weather-delete-id=${weather.id}>Delete</button>
+        </div>
       </div>
-    </div>
       `;
     $('#weather').html(cardString);
   });
@@ -19,9 +19,8 @@ const printAllZips = (weatherArray) => {
 
 const weatherPage = () => {
   const uid = authHelpers.getCurrentUid();
-  getAllZips(uid)
+  weatherData.getAllZips(uid)
     .then((weatherArray) => {
-      console.log(weatherArray);
       printAllZips(weatherArray);
     })
     .catch((error) => {
@@ -29,8 +28,25 @@ const weatherPage = () => {
     });
 };
 
+const deleteZips = (e) => {
+  const idToDelete = e.target.dataset.weatherDeleteId;
+  weatherData.deleteZipcode(idToDelete)
+    .then(() => {
+      weatherPage();
+      $('#weather').html('');
+    })
+    .catch((error) => {
+      console.error('error in deleting zipcode', error);
+    });
+};
+
+const bindEvents = () => {
+  $('body').on('click', '.delete-weather-btn', deleteZips);
+};
+
 const initializeWeatherPage = () => {
   weatherPage();
+  bindEvents();
 };
 
 export default initializeWeatherPage;
