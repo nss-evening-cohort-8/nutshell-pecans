@@ -30,10 +30,8 @@ const weatherPage = () => {
 
 const deleteZips = (e) => {
   const idToDelete = e.target.dataset.weatherDeleteId;
-  console.log(idToDelete);
   weatherData.deleteZipcode(idToDelete)
     .then(() => {
-      console.log('im here');
       weatherPage();
       $('#weather').html('');
     })
