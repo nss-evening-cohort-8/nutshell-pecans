@@ -1,9 +1,11 @@
 import $ from 'jquery';
 import authHelpers from '../../helpers/authHelpers';
 import weatherData from '../../helpers/data/weatherData';
+import buildAddForm from './addEditWeather';
 
 const printAllZips = (weatherArray) => {
   let cardString = '';
+  cardString += '<button id="addZipBtn" class="btn btn-info">Add New Zipcode</button>';
   weatherArray.forEach((weather) => {
     cardString += `
       <div class="card">
@@ -42,6 +44,7 @@ const deleteZips = (e) => {
 
 const bindEvents = () => {
   $('body').on('click', '.delete-weather-btn', deleteZips);
+  $('body').on('click', '#addZipBtn', buildAddForm);
 };
 
 const initializeWeatherPage = () => {
