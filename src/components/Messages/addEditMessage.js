@@ -3,6 +3,8 @@ import authHelpers from '../../helpers/authHelpers';
 import messagesData from '../../helpers/data/messagesData';
 import messageDisplay from './messageDisplay';
 
+// add
+
 const messageToSend = () => {
   const message = {
     uid: authHelpers.getCurrentUid(),
@@ -26,6 +28,13 @@ const sendNewMessage = () => {
 
 const addEditMessageEvents = () => {
   $('body').on('click', '#button-addon1', sendNewMessage);
+};
+
+// edit
+
+const selectEditMessage = (e) => {
+  const idToEdit = e.target.dataset.editId;
+    
 };
 
 export default addEditMessageEvents;
