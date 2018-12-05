@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import 'bootstrap';
 import firebase from 'firebase/app';
 import apiKeys from '../db/apiKeys.json';
