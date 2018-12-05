@@ -13,6 +13,7 @@ import initializeArticlesPage from './components/ArticlesPage/articlesPage';
 import eventsPage from './components/EventsPage/eventsPage';
 import monkeyButt from './components/AddEditArticles/addEditArticles';
 import addEditMessageEvents from './components/Messages/addEditMessage';
+import buildZipForm from './components/Weather/addEditWeather';
 
 const initializeUserApp = () => {
   eventsPage();
@@ -21,6 +22,7 @@ const initializeUserApp = () => {
   addEditMessageEvents();
   initializeWeatherPage();
   $('body').on('click', '#buildEventInput', buildAddForm);
+  $('body').on('click', '#addZipBtn', buildZipForm);
 };
 
 const initializeApp = () => {
