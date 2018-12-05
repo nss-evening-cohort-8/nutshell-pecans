@@ -34,6 +34,7 @@ const addEditMessageEvents = () => {
 
 const selectEditMessage = (e) => {
   const idToEdit = e.target.dataset.editId;
+  messagesData.getExistingMessages
     
 };
 
