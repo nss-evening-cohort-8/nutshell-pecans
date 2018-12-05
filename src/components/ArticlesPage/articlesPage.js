@@ -44,8 +44,22 @@ const deleteArticle = (e) => {
     });
 };
 
+const addArticle = () => {
+  const newFriend = gettingArticleFromForm();
+  articlesData.addNewArticle(newArticle)
+    .then(() => {
+      $('#add-edit-article').html('').hide();
+      $('#articles').show();
+      initializeArticlesPage();
+    })
+    .catch((error) => {
+      console.error('error', error);
+    });
+};
+
 const bindEvents = () => {
   $('body').on('click', '.deleteButton', deleteArticle);
+  $('body').on('click', '#add-article', addArticle);
 };
 
 const initializeArticlesPage = () => {
