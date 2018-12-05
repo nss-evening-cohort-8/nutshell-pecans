@@ -24,5 +24,4 @@ const getAllArticles = uid => new Promise((resolve, reject) => {
 
 const deleteArticle = articleId => axios.delete(`${firebaseUrl}/articles/${articleId}.json`);
 
-
 export default { getAllArticles, deleteArticle };
