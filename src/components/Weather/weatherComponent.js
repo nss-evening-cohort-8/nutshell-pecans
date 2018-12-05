@@ -9,7 +9,7 @@ const printAllZips = (weatherArray) => {
       <div class="card">
         <div class="card-body">
           <h5>${weather.zipcode}</h5>
-          <button class="btn btn-danger delete-weather-btn weather-delete-id"=${weather.id}>Delete</button>
+          <button class="btn btn-danger delete-weather-btn" data-weather-delete-id=${weather.id}>Delete</button>
         </div>
       </div>
       `;
@@ -29,7 +29,8 @@ const weatherPage = () => {
 };
 
 const deleteZips = (e) => {
-  const idToDelete = e.target.dataset.deleteId;
+  const idToDelete = e.target.dataset.weatherDeleteId;
+  console.log(idToDelete);
   weatherData.deleteZipcode(idToDelete)
     .then(() => {
       console.log('im here');
