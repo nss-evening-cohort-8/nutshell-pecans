@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import 'bootstrap';
 import firebase from 'firebase/app';
 import apiKeys from '../db/apiKeys.json';
@@ -12,6 +12,7 @@ import initializeWeatherPage from './components/Weather/weatherComponent';
 import initializeArticlesPage from './components/ArticlesPage/articlesPage';
 import eventsPage from './components/EventsPage/eventsPage';
 import addEditMessageEvents from './components/Messages/addEditMessage';
+import buildZipForm from './components/Weather/addEditWeather';
 
 const initializeUserApp = () => {
   eventsPage();
@@ -20,6 +21,7 @@ const initializeUserApp = () => {
   addEditMessageEvents();
   initializeWeatherPage();
   $('body').on('click', '#buildEventInput', buildAddForm);
+  $('body').on('click', '#addZipBtn', buildZipForm);
 };
 
 const initializeApp = () => {
