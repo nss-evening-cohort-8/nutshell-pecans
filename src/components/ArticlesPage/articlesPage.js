@@ -38,7 +38,6 @@ const deleteArticle = (e) => {
   articlesData.deleteArticle(idToDelete)
     .then(() => {
       articlesPage();
-      $('#articles').html('');
     })
     .catch((error) => {
       console.error('error in deleting article', error);
