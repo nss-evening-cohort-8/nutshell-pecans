@@ -26,4 +26,11 @@ const deleteArticle = articleId => axios.delete(`${firebaseUrl}/articles/${artic
 
 const addArticle = articlesObject => axios.post(`${firebaseUrl}/articles.json`, JSON.stringify(articlesObject));
 
-export default { getAllArticles, deleteArticle, addArticle };
+const updateArticle = (articlesObject, articleId) => axios.put(`${firebaseUrl}/articles/${articleId}.json`, JSON.stringify(articlesObject));
+
+export default {
+  getAllArticles,
+  deleteArticle,
+  addArticle,
+  updateArticle,
+};

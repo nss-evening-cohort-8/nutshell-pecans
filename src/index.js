@@ -11,7 +11,7 @@ import buildAddForm from './components/AddEditEvents/addEditEvents';
 import initializeWeatherPage from './components/Weather/weatherComponent';
 import initializeArticlesPage from './components/ArticlesPage/articlesPage';
 import eventsPage from './components/EventsPage/eventsPage';
-import buildAddArticleForm from './components/AddEditArticles/addEditArticles';
+import monkeyButt from './components/AddEditArticles/addEditArticles';
 import addEditMessageEvents from './components/Messages/addEditMessage';
 
 const initializeUserApp = () => {
@@ -28,7 +28,8 @@ const initializeApp = () => {
   navbar();
   authHelpers.checkLoginStatus(initializeUserApp);
   loginButton();
-  $('body').on('click', '#add-articles', buildAddArticleForm);
+  $('body').on('click', '#add-articles', monkeyButt.buildAddArticleForm);
+  $('body').on('click', '.editArticlesButton', monkeyButt.showEditArticleForm);
 };
 
 initializeApp();

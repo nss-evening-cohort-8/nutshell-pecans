@@ -12,8 +12,8 @@ const articlesBuilder = (articlesArray) => {
         <h2 class="card-title">${article.title}</h2>
         <h2>${article.url}</h2>
         <h2>${article.synopsis}</h2>
-        <input class="editButton pt-1 ml-2" data-edit-id=${article.id} type="image" src="https://image.flaticon.com/icons/svg/230/230330.svg" width="25px" height="45px"></input>
-         <input class="deleteButton pt-1" data-delete-id=${article.id} type="image" src="https://image.flaticon.com/icons/svg/248/248953.svg" width="30px" height="50px"></input>
+        <input class="editArticlesButton pt-1 ml-2" data-edit-id=${article.id} type="image" src="https://image.flaticon.com/icons/svg/230/230330.svg" width="25px" height="45px"></input>
+         <input class="deleteArticlesButton pt-1" data-delete-id=${article.id} type="image" src="https://image.flaticon.com/icons/svg/248/248953.svg" width="30px" height="50px"></input>
     </div>
     </div>
   `;
@@ -45,7 +45,7 @@ const deleteArticle = (e) => {
 };
 
 const bindEvents = () => {
-  $('body').on('click', '.deleteButton', deleteArticle);
+  $('body').on('click', '.deleteArticlesButton', deleteArticle);
 };
 
 const initializeArticlesPage = () => {

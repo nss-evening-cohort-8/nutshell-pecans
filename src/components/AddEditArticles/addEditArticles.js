@@ -59,8 +59,24 @@ const addArticle = () => {
     });
 };
 
+const showEditArticleForm = () => {
+  const emptyArticle = {
+    title: '',
+    synopsis: '',
+    url: '',
+  };
+
+  let domString = '<h2>Edit Article</h2>';
+  domString += formBuilder(emptyArticle);
+  domString += '<button id="add-new-article">Submit</button>';
+  $('#add-edit-article').html(domString).show();
+  $('#articles').hide();
+};
 
 $('body').on('click', '#add-new-article', addArticle);
 
 
-export default buildAddArticleForm;
+export default {
+  buildAddArticleForm,
+  showEditArticleForm,
+};
