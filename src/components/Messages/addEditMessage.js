@@ -26,16 +26,26 @@ const sendNewMessage = () => {
     });
 };
 
-const addEditMessageEvents = () => {
-  $('body').on('click', '#button-addon1', sendNewMessage);
-};
-
 // edit
 
 const selectEditMessage = (e) => {
   const idToEdit = e.target.dataset.editId;
-  messagesData.getExistingMessages
-    
+  messagesData.getSingleMessage(idToEdit)
+    .then((singelMessage) => {
+      console.log(singelMessage);
+      $('#messageInputArea').val(singelMessage.message);
+    })
+    .catch((error) => {
+      console.error('error in getting message to edit', error);
+    });
+};
+
+
+// events
+
+const addEditMessageEvents = () => {
+  $('body').on('click', '#button-addon1', sendNewMessage);
+  $('body').on('click', '.editMessageButton', selectEditMessage);
 };
 
 export default addEditMessageEvents;
