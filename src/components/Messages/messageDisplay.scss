@@ -7,9 +7,13 @@
    border: 1px solid slategray;
    border-radius: 5px;
    background-color: white;
+   overflow: auto;
    margin-bottom: 5px;
    height: 120px;
    width: 100%;
+   small {
+     font-size: .33em;
+   }
  }
  #expandMessages {
    background-color: transparent;
