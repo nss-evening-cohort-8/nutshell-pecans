@@ -23,4 +23,6 @@ const getExistingMessages = () => new Promise((resolve, reject) => {
 
 const deleteMessage = messageId => axios.delete(`${firebase}/messages/${messageId}.json`);
 
-export default { getExistingMessages, deleteMessage };
+const addNewMessage = messageObject => axios.post(`${firebase}/messages.json`, JSON.stringify(messageObject));
+
+export default { getExistingMessages, deleteMessage, addNewMessage };
