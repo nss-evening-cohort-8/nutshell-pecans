@@ -1,3 +1,9 @@
+import $ from 'jquery';
+import './addEditEvents.scss';
+import authHelpers from '../../helpers/authHelpers';
+import eventsData from '../../helpers/data/eventsData';
+import initializeEventsPage from '../EventsPage/eventsPage';
+
 const formBuilder = (event) => {
   const form = `
   <div class="form-group">
@@ -16,3 +22,48 @@ const formBuilder = (event) => {
 
   return form;
 };
+
+const gettingEventFromForm = () => {
+  const event = {
+    event: $('#form-event-title').val(),
+    location: $('#form-event-location').val(),
+    startDate: $('#form-event-date').val(),
+    uid: authHelpers.getCurrentUid(),
+  };
+  return (event);
+};
+
+const buildAddForm = () => {
+  const emptyEvent = {
+    event: '',
+    location: '',
+    startDate: '',
+  };
+
+  let domString = '<h3>ADD NEW EVENT</h3>';
+  domString += formBuilder(emptyEvent);
+  domString += '<button id="add-event">Add Event</button>';
+  $('#add-edit-event').html(domString).show();
+  $('#events').hide();
+};
+
+const addNewEvent = () => {
+  const newEvent = gettingEventFromForm();
+  eventsData
+    .addNewEvent(newEvent)
+    .then(() => {
+      $('#add-edit-event')
+        .html('')
+        .hide();
+      $('#events').show();
+      initializeEventsPage();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+$('body').on('click', '#add-event', addNewEvent);
+$('body').on('click', '#buildEventInput', buildAddForm);
+
+export default buildAddForm;
