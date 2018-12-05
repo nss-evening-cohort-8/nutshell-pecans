@@ -42,7 +42,7 @@ const buildAddForm = () => {
 
   let domString = '<h3>ADD NEW EVENT</h3>';
   domString += formBuilder(emptyEvent);
-  domString += '<button id="add-event">Add Event</button>';
+  domString += '<button id="add-event" class="formButton">ADD EVENT</button>';
   $('#add-edit-event').html(domString).show();
   $('#events').hide();
 };
@@ -99,7 +99,7 @@ const getSingleEvent = (e) => {
   eventsData.getSingleEvent(eventId).then((singleEvent) => {
     let domString = '<h3>EDIT EVENT</h3>';
     domString += formBuilder(singleEvent);
-    domString += '<button id="edit-event">Edit Event</button>';
+    domString += '<button id="edit-event" class="formButton">EDIT EVENT</button>';
     $('#add-edit-event').html(domString).show();
     $('#events').hide();
   })

@@ -5,12 +5,12 @@ import eventsData from '../../helpers/data/eventsData';
 
 const printAllEvents = (eventsArray) => {
   let domString = '';
-  domString += '<h3 class="events-header text-center">Events</h3>';
+  domString += '<h1 class="events-header text-center">EVENTS</h1>';
   eventsArray.forEach((event) => {
     domString += `<div class="eventInfo event d-flex">
-        <h3 class="taskInfo m-1" data-task-id=${event.id}>What: ${event.event}<h3>
-        <h5 class="taskInfo m-1" data-task-id=${event.id}>Where: ${event.location}<h3>
-        <h6 class="taskInfo m-1" data-task-id=${event.id}>When: ${event.startDate}<h3>
+        <h3 class="taskInfo m-1" data-task-id=${event.id}>WHAT:  ${event.event}<h3>
+        <h3 class="taskInfo m-1" data-task-id=${event.id}>WHERE: ${event.location}<h3>
+        <h3 class="taskInfo m-1" data-task-id=${event.id}>WHEN: ${event.startDate}<h3>
          <input class="event-edit-button pt-1 ml-2" data-edit-id=${event.id} type="image" src="https://image.flaticon.com/icons/svg/230/230330.svg" width="25px" height="45px"></input>
          <input class="deleteButton pt-1" data-delete-id=${event.id} type="image" src="https://image.flaticon.com/icons/svg/248/248953.svg" width="30px" height="50px"></input>
             </div>`;
