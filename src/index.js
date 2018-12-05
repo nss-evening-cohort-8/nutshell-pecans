@@ -11,6 +11,7 @@ import buildAddForm from './components/AddEditEvents/addEditEvents';
 import initializeWeatherPage from './components/Weather/weatherComponent';
 import initializeArticlesPage from './components/ArticlesPage/articlesPage';
 import eventsPage from './components/EventsPage/eventsPage';
+import buildAddArticleForm from './components/AddEditArticles/addEditArticles';
 import addEditMessageEvents from './components/Messages/addEditMessage';
 import buildZipForm from './components/Weather/addEditWeather';
 
@@ -29,6 +30,7 @@ const initializeApp = () => {
   navbar();
   authHelpers.checkLoginStatus(initializeUserApp);
   loginButton();
+  $('body').on('click', '#add-articles', buildAddArticleForm);
 };
 
 initializeApp();
