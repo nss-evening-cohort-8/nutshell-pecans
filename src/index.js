@@ -25,6 +25,7 @@ const initializeApp = () => {
   navbar();
   authHelpers.checkLoginStatus(initializeUserApp);
   loginButton();
+  $('body').on('click', '#add-articles', buildAddForm);
 };
 
 initializeApp();

@@ -24,6 +24,6 @@ const getAllArticles = uid => new Promise((resolve, reject) => {
 
 const deleteArticle = articleId => axios.delete(`${firebaseUrl}/articles/${articleId}.json`);
 
-const addArticle = articleObject => axios.post(`${firebaseUrl}/friends.json`, JSON.stringify(articleObject));
+const addArticle = articlesObject => axios.post(`${firebaseUrl}/articles.json`, JSON.stringify(articlesObject));
 
 export default { getAllArticles, deleteArticle, addArticle };
