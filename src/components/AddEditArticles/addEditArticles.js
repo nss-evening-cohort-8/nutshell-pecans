@@ -32,7 +32,7 @@ const gettingArticleFromForm = () => {
   return article;
 };
 
-const buildAddForm = () => {
+const buildAddArticleForm = () => {
   const emptyArticle = {
     title: '',
     synopsis: '',
@@ -63,4 +63,4 @@ const addArticle = () => {
 $('body').on('click', '#add-new-article', addArticle);
 
 
-export default buildAddForm;
+export default buildAddArticleForm;

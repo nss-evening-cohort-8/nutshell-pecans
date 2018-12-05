@@ -4,8 +4,9 @@ import authHelpers from '../../helpers/authHelpers';
 import articlesData from '../../helpers/data/articlesData';
 
 const articlesBuilder = (articlesArray) => {
+  let articleString = '';
   articlesArray.forEach((article) => {
-    const articleString = `
+    articleString += `
     <div class="card">
       <div class="card-body">
         <h2 class="card-title">${article.title}</h2>
@@ -16,8 +17,8 @@ const articlesBuilder = (articlesArray) => {
     </div>
     </div>
   `;
-    $('#articles').append(articleString);
   });
+  $('#articles-container').html(articleString);
 };
 
 const articlesPage = () => {

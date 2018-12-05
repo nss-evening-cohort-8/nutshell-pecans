@@ -7,11 +7,11 @@ import messageDisplay from './components/Messages/messageDisplay';
 import navbar from './components/Navbar/navbar';
 import loginButton from './components/Auth/auth';
 import authHelpers from './helpers/authHelpers';
-
+import buildAddForm from './components/AddEditEvents/addEditEvents';
 import initializeWeatherPage from './components/Weather/weatherComponent';
 import initializeArticlesPage from './components/ArticlesPage/articlesPage';
 import eventsPage from './components/EventsPage/eventsPage';
-import buildAddForm from './components/AddEditArticles/addEditArticles';
+import buildAddArticleForm from './components/AddEditArticles/addEditArticles';
 import addEditMessageEvents from './components/Messages/addEditMessage';
 
 const initializeUserApp = () => {
@@ -20,6 +20,7 @@ const initializeUserApp = () => {
   messageDisplay();
   addEditMessageEvents();
   initializeWeatherPage();
+  $('body').on('click', '#buildEventInput', buildAddForm);
 };
 
 const initializeApp = () => {
@@ -27,7 +28,7 @@ const initializeApp = () => {
   navbar();
   authHelpers.checkLoginStatus(initializeUserApp);
   loginButton();
-  $('body').on('click', '#add-articles', buildAddForm);
+  $('body').on('click', '#add-articles', buildAddArticleForm);
 };
 
 initializeApp();
