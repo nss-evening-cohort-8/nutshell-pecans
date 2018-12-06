@@ -99,7 +99,7 @@ const getSingleEvent = (e) => {
   eventsData.getSingleEvent(eventId).then((singleEvent) => {
     let domString = '<h3>EDIT EVENT</h3>';
     domString += formBuilder(singleEvent);
-    domString += '<button id="edit-event" class="formButton">EDIT EVENT</button>';
+    domString += '<button id="edit-event" class="formButton">SAVE EVENT</button>';
     $('#add-edit-event').html(domString).show();
     $('#events').hide();
   })
