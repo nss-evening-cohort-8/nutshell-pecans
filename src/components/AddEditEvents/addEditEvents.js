@@ -33,7 +33,7 @@ const gettingEventFromForm = () => {
   return (event);
 };
 
-const buildAddForm = () => {
+const buildAddEventForm = () => {
   const emptyEvent = {
     event: '',
     location: '',
@@ -42,7 +42,7 @@ const buildAddForm = () => {
 
   let domString = '<h3>ADD NEW EVENT</h3>';
   domString += formBuilder(emptyEvent);
-  domString += '<button id="add-event">Add Event</button>';
+  domString += '<button id="add-event" class="formButton">ADD EVENT</button>';
   $('#add-edit-event').html(domString).show();
   $('#events').hide();
 };
@@ -63,7 +63,39 @@ const addNewEvent = () => {
     });
 };
 
-$('body').on('click', '#add-event', addNewEvent);
-$('body').on('click', '#buildEventInput', buildAddForm);
+const getSingleEvent = (e) => {
+  // firebase id
+  const eventId = e.target.dataset.editId;
+  eventsData.getSingleEvent(eventId).then((singleEvent) => {
+    let domString = '<h3>EDIT EVENT</h3>';
+    domString += formBuilder(singleEvent);
+    domString += `<button id="edit-event" data-single-edit-id=${singleEvent.Id}>SAVE EVENT</button>`;
+    $('#add-edit-event').html(domString).show();
+    $('#single-event-container').html('');
+    $('#events').hide();
+  })
+    .catch((error) => {
+      console.error('error in getting one event', error);
+    });
+};
 
-export default buildAddForm;
+const updateEvent = (e) => {
+  const updatedEvent = gettingEventFromForm();
+  const eventId = e.target.dataset.singleEditId;
+  eventsData.updateEvent(updatedEvent, eventId)
+    .then(() => {
+      $('#add-edit-event').html('').hide();
+      $('#single-event-container').html('');
+      $('#events').show();
+      initializeEventsPage();
+    })
+    .catch((error) => {
+      console.error('error', error);
+    });
+};
+
+$('body').on('click', '#add-event', addNewEvent);
+$('body').on('click', '.event-edit-button', getSingleEvent);
+$('body').on('click', '#edit-event', updateEvent);
+
+export default buildAddEventForm;
