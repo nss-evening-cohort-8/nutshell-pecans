@@ -37,10 +37,13 @@ const deleteEvent = idToDelete => axios.delete(`${apiKeys.firebaseKeys.databaseU
 
 const addNewEvent = eventObject => axios.post(`${firebaseUrl}/events.json`, JSON.stringify(eventObject));
 
+const updateEvent = (eventObject, eventId) => axios.put(`${firebaseUrl}/events/${eventId}.json`, JSON.stringify(eventObject));
+
 export default {
   getAllEvents,
   deleteEvent,
   getSingleEvent,
   addNewEvent,
+  updateEvent,
 
 };
