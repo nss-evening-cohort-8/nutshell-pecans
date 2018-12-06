@@ -33,7 +33,7 @@ const gettingEventFromForm = () => {
   return (event);
 };
 
-const buildAddForm = () => {
+const buildAddEventForm = () => {
   const emptyEvent = {
     event: '',
     location: '',
@@ -63,44 +63,15 @@ const addNewEvent = () => {
     });
 };
 
-// const showEventEditForm = (e) => {
-//   const idToEdit = e.target.dataset.editId;
-//   eventsData.getSingleEvent(idToEdit)
-//     .then((singleEvent) => {
-//       let domString = '<div class="text-center m-4">';
-//       domString += '<h3 class="m-2 edit-event-heading">Edit Event</h3>';
-//       domString += formBuilder(singleEvent);
-//       domString += '</div>';
-//       $('#addEditTask').html(domString).show();
-//       $('#tasksContainer').hide();
-//       $('#inputField').focus();
-//     }).catch((error) => {
-//       console.error(error);
-//     });
-// };
-
-// const eventUpdate = (e) => {
-//   const updateEvent = gettingEventFromForm();
-//   const eventId = e.target.dataset.singleEditId;
-//   eventsData.updateSingleEvent(updateEvent, eventId)
-//     .then(() => {
-//       $('#add-edit-event').html('').hide();
-//       $('#eventsContainer').show();
-//       initializeEventsPage();
-//     }).catch((error) => {
-//       console.error(error);
-//     });
-// };
-
 const getSingleEvent = (e) => {
   // firebase id
   const eventId = e.target.dataset.editId;
-  console.log(eventId);
   eventsData.getSingleEvent(eventId).then((singleEvent) => {
     let domString = '<h3>EDIT EVENT</h3>';
     domString += formBuilder(singleEvent);
-    domString += '<button id="edit-event" class="formButton">SAVE EVENT</button>';
+    domString += `<button id="edit-event" data-single-edit-id=${singleEvent.Id}>SAVE EVENT</button>`;
     $('#add-edit-event').html(domString).show();
+    $('#single-event-container').html('');
     $('#events').hide();
   })
     .catch((error) => {
@@ -108,8 +79,23 @@ const getSingleEvent = (e) => {
     });
 };
 
+const updateEvent = (e) => {
+  const updatedEvent = gettingEventFromForm();
+  const eventId = e.target.dataset.singleEditId;
+  eventsData.updateEvent(updatedEvent, eventId)
+    .then(() => {
+      $('#add-edit-event').html('').hide();
+      $('#single-event-container').html('');
+      $('#events').show();
+      initializeEventsPage();
+    })
+    .catch((error) => {
+      console.error('error', error);
+    });
+};
+
 $('body').on('click', '#add-event', addNewEvent);
 $('body').on('click', '.event-edit-button', getSingleEvent);
-// $('body').on('click', '#edit-event', eventUpdate);
+$('body').on('click', '#edit-event', updateEvent);
 
-export default buildAddForm;
+export default buildAddEventForm;
