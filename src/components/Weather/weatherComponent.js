@@ -11,7 +11,7 @@ const zipStringBuilder = (weather) => {
 };
 
 const printSingleZip = (weather) => {
-  let cardString = `
+  const cardString = `
       <div class="card">
         <div class="card-body">
           <div class="zipContainer">${weather.zipcode}</div>
@@ -27,7 +27,7 @@ const printSingleZip = (weather) => {
   if (weather.isCurrent) {
     $('.checkIsCurrent').attr('checked', true);
   }
-  cardString += '<button id="addZipBtn" class="btn btn-info">Add New Zipcode</button>';
+  // cardString += '<button id="addZipBtn" class="btn btn-info">Add New Zipcode</button>';
   $('#weather').html(cardString);
 };
 

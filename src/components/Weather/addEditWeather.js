@@ -21,7 +21,7 @@ const buildZipForm = () => {
   let domString = '<h6>Enter Zip Code</h6>';
   domString += formBuilder(emptyZip);
   domString += '<button id="addZip"> Save your Zip Code</button>';
-  $('#addEditZip').html(domString).show();
+  $('#addEditZip').html(domString);
 };
 
 const gettingZipFromForm = () => {
@@ -37,7 +37,7 @@ const addNewZip = () => {
   const newZip = gettingZipFromForm();
   weatherData.addZipcode(newZip)
     .then(() => {
-      $('#addEditZip').html('').hide();
+      // $('#weather').html('').hide();
       initializeWeatherPage();
     })
     .catch((error) => {
@@ -45,6 +45,6 @@ const addNewZip = () => {
     });
 };
 
-$('body').on('click', '#addZip', addNewZip);
+$('#addZipBtn').on('click', addNewZip);
 
 export default buildZipForm;
