@@ -23,7 +23,10 @@ const getAllZips = uid => new Promise((resolve, reject) => {
 
 const deleteZipcode = idToDelete => axios.delete(`${firebaseUrl}/weather/${idToDelete}.json`);
 
+const addZipcode = weatherObject => axios.post(`${firebaseUrl}/weather.json`, JSON.stringify(weatherObject));
+
 export default {
   getAllZips,
   deleteZipcode,
+  addZipcode,
 };

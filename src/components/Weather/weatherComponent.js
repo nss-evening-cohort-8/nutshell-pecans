@@ -15,6 +15,8 @@ const printAllZips = (weatherArray) => {
       `;
     $('#weather').html(cardString);
   });
+  cardString += '<button id="addZipBtn" class="btn btn-info">Add New Zipcode</button>';
+  $('#weather').html(cardString);
 };
 
 const weatherPage = () => {
