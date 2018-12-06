@@ -59,22 +59,39 @@ const addArticle = () => {
     });
 };
 
-const showEditArticleForm = () => {
-  const emptyArticle = {
-    title: '',
-    synopsis: '',
-    url: '',
-  };
+const showEditArticleForm = (e) => {
+  const idToEdit = e.target.dataset.editId;
+  articlesData.getSingleArticle(idToEdit)
+    .then((singleArticle) => {
+      let domString = '<h2>Edit Article</h2>';
+      domString += formBuilder(singleArticle);
+      domString += `<button id="edit-article" data-single-edit-id=${singleArticle.id}>Save Article</button>`;
+      $('#add-edit-article').html(domString).show();
+      $('#articles').hide();
+    })
+    .catch((error) => {
+      console.error('error in getting single for edit', error);
+    });
+};
 
-  let domString = '<h2>Edit Article</h2>';
-  domString += formBuilder(emptyArticle);
-  domString += '<button id="add-new-article">Submit</button>';
-  $('#add-edit-article').html(domString).show();
-  $('#articles').hide();
+const updateArticle = (e) => {
+  const updatedArticle = gettingArticleFromForm();
+  const articleId = e.target.dataset.singleEditId;
+  articlesData.updateArticle(updatedArticle, articleId)
+    .then(() => {
+      $('#add-edit-article').html('').hide();
+      $('#articles-container').html('');
+      $('#articles').show();
+      initializeArticlesPage();
+    })
+    .catch((error) => {
+      console.error('error', error);
+    });
 };
 
 $('body').on('click', '#add-new-article', addArticle);
 
+$('body').on('click', '#edit-article', updateArticle);
 
 export default {
   buildAddArticleForm,

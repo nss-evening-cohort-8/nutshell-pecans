@@ -22,6 +22,18 @@ const getAllArticles = uid => new Promise((resolve, reject) => {
     });
 });
 
+const getSingleArticle = articleId => new Promise((resolve, reject) => {
+  axios.get(`${firebaseUrl}/articles/${articleId}.json`)
+    .then((result) => {
+      const singleArticle = result.data;
+      singleArticle.id = articleId;
+      resolve(singleArticle);
+    })
+    .catch((error) => {
+      reject(error);
+    });
+});
+
 const deleteArticle = articleId => axios.delete(`${firebaseUrl}/articles/${articleId}.json`);
 
 const addArticle = articlesObject => axios.post(`${firebaseUrl}/articles.json`, JSON.stringify(articlesObject));
@@ -30,6 +42,7 @@ const updateArticle = (articlesObject, articleId) => axios.put(`${firebaseUrl}/a
 
 export default {
   getAllArticles,
+  getSingleArticle,
   deleteArticle,
   addArticle,
   updateArticle,
