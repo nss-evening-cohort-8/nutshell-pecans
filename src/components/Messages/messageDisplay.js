@@ -2,6 +2,9 @@ import $ from 'jquery';
 import './messageDisplay.scss';
 import messageData from '../../helpers/data/messagesData';
 
+// messing around
+
+
 // Loading Message display
 
 const messageStringBuilder = () => {
