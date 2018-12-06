@@ -25,8 +25,11 @@ const deleteZipcode = idToDelete => axios.delete(`${firebaseUrl}/weather/${idToD
 
 const addZipcode = weatherObject => axios.post(`${firebaseUrl}/weather.json`, JSON.stringify(weatherObject));
 
+const updateIsCurrent = (zipId, isCurrent) => axios.patch(`${firebaseUrl}/weather/${zipId}.json`, { isCurrent });
+
 export default {
   getAllZips,
   deleteZipcode,
   addZipcode,
+  updateIsCurrent,
 };
