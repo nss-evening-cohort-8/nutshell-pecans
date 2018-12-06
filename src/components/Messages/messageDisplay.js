@@ -9,7 +9,7 @@ const messageStringBuilder = () => {
     <div id="newMessages"></div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <button class="btn btn-secondary" type="button" id="button-addon1">Send</button>
+        <button class="btn btn-secondary sendMessage" type="button" id="button-addon1">Send</button>
       </div>
       <input id="messageInputArea" type="text" class="form-control" placeholder="" aria-describedby="button-addon1">
     </div>
