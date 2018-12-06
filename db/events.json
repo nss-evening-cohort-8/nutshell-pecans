@@ -1,38 +1,38 @@
 {
   "event1": {
     "uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
-    "event": "Bonfire at the beach",
-    "startDate": 1528763298535,
+    "event": "Beach Bonfire Bungaloo",
+    "startDate": "12.24.18",
     "location": "Ocean Beach"
   },
   "event2": {
     "uid": "6g2ZpJtlGtaiH69WB3eC8rD4Orf2",
-    "event": "Nap",
-    "startDate": 1528763298536,
+    "event": "Slumber Pizza Party",
+    "startDate": "11.13.19",
     "location": "NSS"
   },
   "event3": {
     "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
-    "event": "Party Time",
-    "startDate": 1528763298535,
+    "event": "Super Bowl Fun Time",
+    "startDate": "02.06.19",
     "location": "Party House"
   },
   "event4": {
     "uid": "S1qErs5XzxNnkUgfYEu2zXlTEv02",
     "event": "Walmart Parking Lot Party",
-    "startDate": 1528763298535,
-    "location": "Walmart"
+    "startDate": "05.03.19",
+    "location": "Walmart Parking Lot"
   },
   "event5": {
     "uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
-    "event": "Bonfire at the beach part 2",
-    "startDate": 1528763298535,
-    "location": "Ocean Beach Sidewalk"
+    "event": "July 4th Blowout",
+    "startDate": "07.04.19",
+    "location": "Merica Freedom USA Park"
   },
   "event6": {
     "uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
-    "event": "Bonfire at the beach part 3",
-    "startDate": 1528763298535,
-    "location": "Ocean Beach Pool Deck"
+    "event": "Trick Or Treat Jam",
+    "startDate": "10.31.19",
+    "location": "Door To Door To Door"
   }
 }
