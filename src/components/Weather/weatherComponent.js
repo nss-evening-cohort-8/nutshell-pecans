@@ -11,7 +11,8 @@ const zipStringBuilder = (weather) => {
 };
 
 const printSingleZip = (weather) => {
-  const cardString = `
+  console.log(weather);
+  let cardString = `
       <div class="card">
         <div class="card-body">
           <div class="zipContainer">${weather.zipcode}</div>
@@ -23,12 +24,12 @@ const printSingleZip = (weather) => {
         </div>
       </div>
       `;
-  $('#weather').html(cardString);
+  $('#singleZip').html(cardString);
   if (weather.isCurrent) {
     $('.checkIsCurrent').attr('checked', true);
   }
-  // cardString += '<button id="addZipBtn" class="btn btn-info">Add New Zipcode</button>';
-  $('#weather').html(cardString);
+  cardString += '<button id="addZip" class="btn btn-info">Add New Zipcode</button>';
+  // $('#weather').html(cardString);
 };
 
 const getSingleZip = (e) => {
@@ -75,7 +76,7 @@ const deleteZips = (e) => {
   weatherData.deleteZipcode(idToDelete)
     .then(() => {
       weatherPage();
-      $('#weather').html('');
+      $('#singleZip').html('');
     })
     .catch((error) => {
       console.error('error in deleting zipcode', error);
