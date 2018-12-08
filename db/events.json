@@ -4,41 +4,41 @@
     "event": "Beach Bonfire Bungaloo",
     "startDate": "12.24.18",
     "location": "Ocean Beach",
-    "attending": true
+    "isAttending": true
   },
   "event2": {
     "uid": "6g2ZpJtlGtaiH69WB3eC8rD4Orf2",
     "event": "Slumber Pizza Party",
     "startDate": "11.13.19",
     "location": "NSS",
-    "attending": true
+    "isAttending": true
   },
   "event3": {
     "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
     "event": "Super Bowl Fun Time",
     "startDate": "02.06.19",
     "location": "Party House",
-    "attending": true
+    "isAttending": true
   },
   "event4": {
     "uid": "S1qErs5XzxNnkUgfYEu2zXlTEv02",
     "event": "Walmart Parking Lot Party",
     "startDate": "05.03.19",
     "location": "Walmart Parking Lot",
-    "attending": false
+    "isAttending": false
   },
   "event5": {
     "uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
     "event": "July 4th Blowout",
     "startDate": "07.04.19",
     "location": "Merica Freedom USA Park",
-    "attending": true
+    "isAttending": true
   },
   "event6": {
     "uid": "FuvJT2kVlhXvUS8e0dFVTkbVLSf1",
     "event": "Trick Or Treat Jam",
     "startDate": "10.31.19",
     "location": "Door To Door To Door",
-    "attending": false
+    "isAttending": false
   }
 }
