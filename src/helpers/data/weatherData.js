@@ -2,6 +2,7 @@ import axios from 'axios';
 import apiKeys from '../../../db/apiKeys';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
+const weatherKey = apiKeys.weatherbit.apiKey;
 
 const getAllZips = uid => new Promise((resolve, reject) => {
   axios.get(`${firebaseUrl}/weather.json?orderBy="uid"&equalTo="${uid}"`)
@@ -33,6 +34,21 @@ const getSingleZip = zipId => new Promise((resolve, reject) => {
     });
 });
 
+const getWeatherbit = zipcode => new Promise((resolve, reject) => {
+  axios.get(`https://api.weatherbit.io/v2.0/current?key=${weatherKey}&postal_code=${zipcode}&country=US&units=I`)
+    .then((result) => {
+      if (result.data === '') {
+        resolve('no data available');
+      } else {
+        const apiData = result.data;
+        resolve(apiData);
+      }
+    })
+    .catch((error) => {
+      reject(error);
+    });
+});
+
 const deleteZipcode = idToDelete => axios.delete(`${firebaseUrl}/weather/${idToDelete}.json`);
 
 const addZipcode = weatherObject => axios.post(`${firebaseUrl}/weather.json`, JSON.stringify(weatherObject));
@@ -42,6 +58,7 @@ const updateIsCurrent = (zipId, isCurrent) => axios.patch(`${firebaseUrl}/weathe
 export default {
   getAllZips,
   getSingleZip,
+  getWeatherbit,
   deleteZipcode,
   addZipcode,
   updateIsCurrent,
