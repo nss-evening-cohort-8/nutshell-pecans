@@ -1,6 +1,6 @@
 import $ from 'jquery';
+import moment from 'moment';
 import './messageDisplay.scss';
-import firebase from 'firebase/app';
 import 'firebase/auth';
 import messageData from '../../helpers/data/messagesData';
 
@@ -24,11 +24,10 @@ const gettingMessages = () => {
   messageData.getExistingMessages()
     .then((messagesArray) => {
       messageStringBuilder();
-      const messageUser = firebase.auth().currentUser.displayName;
       let messages = '';
       messagesArray.forEach((message) => {
         messages += `<div>
-        <strong>${messageUser}:</strong> ${message.message} <small>${message.timestamp}</small>
+        <strong>${message.username}:</strong> ${message.message} <small>${moment().calendar(message.timestamp)}</small>
         <input class="editMessageButton pt-1 ml-2" data-edit-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/230/230330.svg" width="15px" height="27px"></input>
         <input class="deleteMessageButton pt-1" data-delete-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/248/248953.svg" width="15px" height="25px"></input>
         </div>`;

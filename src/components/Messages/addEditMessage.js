@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import firebase from 'firebase/app';
 import authHelpers from '../../helpers/authHelpers';
 import messagesData from '../../helpers/data/messagesData';
 import messageDisplay from './messageDisplay';
@@ -11,6 +12,7 @@ const messageToSend = () => {
     message: $('#messageInputArea').val(),
     timestamp: Date.now(),
     isEdited: false,
+    username: firebase.auth().currentUser.displayName,
   };
   return message;
 };
