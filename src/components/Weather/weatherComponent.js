@@ -15,7 +15,11 @@ const printSingleZip = (weather) => {
   let cardString = `
       <div class="card">
         <div class="card-body">
-          <div class="zipContainer">${weather.zipcode}</div>
+          <div class="zipContainer">
+            <h5>${weather.city_name}, ${weather.state_code}</h5>
+            <p>${weather.temp}</p>
+            <p>${weather.weather.description}</p>
+          </div>
           <button class="btn btn-danger delete-weather-btn" data-weather-delete-id=${weather.id}>X</button>
           <div class="form-check form-check-inline">
           <label class="form-check-label" for="inlineCheckbox1">Current zipcode?</label>
@@ -32,13 +36,25 @@ const printSingleZip = (weather) => {
   // $('#weather').html(cardString);
 };
 
-const getSingleZip = (e) => {
-  const zipId = e.target.dataset.dropdownId;
-  weatherData.getSingleZip(zipId).then((singleZip) => {
-    printSingleZip(singleZip);
-  })
+// const getSingleZip = (e) => {
+//   const zipId = e.target.dataset.dropdownId;
+//   weatherData.getSingleZip(zipId).then((singleZip) => {
+//     printSingleZip(singleZip);
+//   })
+//     .catch((error) => {
+//       console.error('error getting single zip', error);
+//     });
+// };
+
+const getWeatherbitData = (e) => {
+  const zipcode = e.target.dataset.dropdownZip;
+  const currentLocation = e.target.dataset.isCurrent;
+  weatherData.getWeatherbit(zipcode)
+    .then((weather) => {
+      printSingleZip(weather, currentLocation);
+    })
     .catch((error) => {
-      console.error('error getting single zip', error);
+      console.error('error getting weather', error);
     });
 };
 
@@ -50,7 +66,7 @@ const buildDropdown = (weatherArray) => {
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">`;
   if (weatherArray.length) {
     weatherArray.forEach((weather) => {
-      dropdown += `<div class="dropdown-item get-single" data-dropdown-id=${weather.id}>${weather.zipcode}</div>`;
+      dropdown += `<div class="dropdown-item get-single" data-dropdown-zip=${weather.zipcode}>${weather.zipcode}</div>`;
     });
   } else {
     dropdown += '<div class="dropdown-item">Add a zipcode</div>';
@@ -97,7 +113,7 @@ const updateIsCurrent = (e) => {
 const bindEvents = () => {
   $('body').on('click', '.delete-weather-btn', deleteZips);
   $('body').on('click', '.checkIsCurrent', updateIsCurrent);
-  $('body').on('click', '.get-single', getSingleZip);
+  $('body').on('click', '.get-single', getWeatherbitData);
 };
 
 const initializeWeatherPage = () => {

@@ -22,25 +22,25 @@ const getAllZips = uid => new Promise((resolve, reject) => {
     });
 });
 
-const getSingleZip = zipId => new Promise((resolve, reject) => {
-  axios.get(`${firebaseUrl}/weather/${zipId}.json`)
-    .then((result) => {
-      const singleZip = result.data;
-      singleZip.id = zipId;
-      resolve(singleZip);
-    })
-    .catch((error) => {
-      reject(error);
-    });
-});
+// const getSingleZip = zipId => new Promise((resolve, reject) => {
+//   axios.get(`${firebaseUrl}/weather/${zipId}.json`)
+//     .then((result) => {
+//       const singleZip = result.data;
+//       singleZip.id = zipId;
+//       resolve(singleZip);
+//     })
+//     .catch((error) => {
+//       reject(error);
+//     });
+// });
 
 const getWeatherbit = zipcode => new Promise((resolve, reject) => {
   axios.get(`https://api.weatherbit.io/v2.0/current?key=${weatherKey}&postal_code=${zipcode}&country=US&units=I`)
     .then((result) => {
-      if (result.data === '') {
+      if (result.data[0] === '') {
         resolve('no data available');
       } else {
-        const apiData = result.data;
+        const apiData = result.data.data[0];
         resolve(apiData);
       }
     })
@@ -57,7 +57,6 @@ const updateIsCurrent = (zipId, isCurrent) => axios.patch(`${firebaseUrl}/weathe
 
 export default {
   getAllZips,
-  getSingleZip,
   getWeatherbit,
   deleteZipcode,
   addZipcode,
