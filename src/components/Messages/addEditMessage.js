@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import firebase from 'firebase/app';
 import authHelpers from '../../helpers/authHelpers';
 import messagesData from '../../helpers/data/messagesData';
 import messageDisplay from './messageDisplay';
@@ -11,6 +12,7 @@ const messageToSend = () => {
     message: $('#messageInputArea').val(),
     timestamp: Date.now(),
     isEdited: false,
+    username: firebase.auth().currentUser.displayName,
   };
   return message;
 };
@@ -32,7 +34,6 @@ const selectEditMessage = (e) => {
   const idToEdit = e.target.dataset.editId;
   messagesData.getSingleMessage(idToEdit)
     .then((singelMessage) => {
-      console.log(singelMessage);
       $('#messageInputArea').val(singelMessage.message);
       $('#button-addon1').toggleClass('sendMessage sendEditedMessage');
       $('#button-addon1').html('Edit');
@@ -51,13 +52,17 @@ const updateMessage = (e) => {
       $('#button-addon1').toggleClass('sendEditedMessage sendMessage');
       $('#button-addon1').html('Send');
       $('#button-addon1').removeAttr('data-single-edit-id');
+      messagesData.updateIsEdited(messageId, true)
+        .then()
+        .catch((error) => {
+          console.error('error in updating isEdited flag', error);
+        });
       messageDisplay();
     })
     .catch((error) => {
       console.error('error in editing message', error);
     });
 };
-
 
 // events
 
