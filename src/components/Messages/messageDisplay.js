@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import moment from 'moment';
 import './messageDisplay.scss';
+import firebase from 'firebase';
 import 'firebase/auth';
 import messageData from '../../helpers/data/messagesData';
 
@@ -27,10 +28,15 @@ const gettingMessages = () => {
       let messages = '';
       messagesArray.forEach((message) => {
         messages += `<div>
-        <strong>${message.username}:</strong> ${message.message} <small>${moment().calendar(message.timestamp)}</small>
-        <input class="editMessageButton pt-1 ml-2" data-edit-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/230/230330.svg" width="15px" height="27px"></input>
-        <input class="deleteMessageButton pt-1" data-delete-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/248/248953.svg" width="15px" height="25px"></input>
-        </div>`;
+        <strong>${message.username}:</strong> ${message.message} <small>${moment().calendar(message.timestamp)}</small>`;
+        if (message.uid === firebase.auth().currentUser.uid) {
+          messages += `
+            <input class="editMessageButton pt-1 ml-2" data-edit-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/230/230330.svg" width="15px" height="27px"></input>
+            <input class="deleteMessageButton pt-1" data-delete-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/248/248953.svg" width="15px" height="25px"></input>
+          </div>`;
+        } else {
+          messages += '</div>';
+        }
       });
       $('#newMessages').html(messages);
     })
