@@ -4,12 +4,20 @@
 
 body {
   background-color: $darkgray;
+  font-family: 'BenchNine', sans-serif;
 }
 
 .addEvent {
-  margin-right: 20px;
+  margin-right: 30px;
   margin-top: 15px;
 }
-#add-edit-event {
-  // background-image: url("../src/images/1.jpg");
+
+#jonathan {
+  margin-left: 90%;
+  margin-top: 1%;
+  color: white;
+
 }
+// #add-edit-event {
+//   background-image: url("../src/images/1.jpg");
+// }
