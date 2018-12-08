@@ -95,7 +95,6 @@ const showEditForm = (e) => {
 };
 
 $('body').on('click', '#add-event', addNewEvent);
-// $('body').on('click', '.event-edit-button', getSingleEvent);
 $('body').on('click', '#edit-event', updateEvent);
 $('body').on('click', '.event-edit-button', showEditForm);
 
