@@ -27,8 +27,9 @@ const gettingMessages = () => {
       messageStringBuilder();
       let messages = '';
       messagesArray.forEach((message) => {
+        const time = moment(message.timestamp).calendar();
         messages += `<div>
-        <strong>${message.username}:</strong> ${message.message} <small>${moment().calendar(message.timestamp)}</small>`;
+        <strong>${message.username}:</strong> ${message.message} <small>${time}</small>`;
         if (message.uid === firebase.auth().currentUser.uid) {
           messages += `
             <input class="editMessageButton pt-1 ml-2" data-edit-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/230/230330.svg" width="15px" height="27px"></input>
