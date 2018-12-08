@@ -6,6 +6,7 @@ import articlesData from '../../helpers/data/articlesData';
 
 const articlesBuilder = (articlesArray) => {
   let articleString = '';
+  articleString += '<h1 class="articles-header text-center">ARTICLES</h1>';
   articlesArray.forEach((article) => {
     articleString += `
     <div class="card articleInfo d-flex">

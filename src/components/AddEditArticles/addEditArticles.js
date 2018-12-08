@@ -1,6 +1,7 @@
 
 import $ from 'jquery';
 import authHelpers from '../../helpers/authHelpers';
+import './addEditArticles.scss';
 import articlesData from '../../helpers/data/articlesData';
 import initializeArticlesPage from '../ArticlesPage/articlesPage';
 
