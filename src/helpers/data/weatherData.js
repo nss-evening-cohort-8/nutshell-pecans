@@ -21,12 +21,28 @@ const getAllZips = uid => new Promise((resolve, reject) => {
     });
 });
 
+const getSingleZip = zipId => new Promise((resolve, reject) => {
+  axios.get(`${firebaseUrl}/weather/${zipId}.json`)
+    .then((result) => {
+      const singleZip = result.data;
+      singleZip.id = zipId;
+      resolve(singleZip);
+    })
+    .catch((error) => {
+      reject(error);
+    });
+});
+
 const deleteZipcode = idToDelete => axios.delete(`${firebaseUrl}/weather/${idToDelete}.json`);
 
 const addZipcode = weatherObject => axios.post(`${firebaseUrl}/weather.json`, JSON.stringify(weatherObject));
 
+const updateIsCurrent = (zipId, isCurrent) => axios.patch(`${firebaseUrl}/weather/${zipId}.json`, { isCurrent });
+
 export default {
   getAllZips,
+  getSingleZip,
   deleteZipcode,
   addZipcode,
+  updateIsCurrent,
 };
