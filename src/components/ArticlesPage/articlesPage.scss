@@ -1,15 +1,24 @@
 .articleInfo {
-  background-color: black;
   color: white;
+  background-color: black;
   text-align: center;
   border-radius: 20px;
   margin: 1%;
   padding: 1%;
-  margin-right: 25%;
-  margin-left: 25%;
+  margin-right: 15%;
+  margin-left: 15%;
+  border: 2px solid white;
 }
 
 #articles {
   color: white;
   text-align: center;
+  font-family: 'BenchNine', sans-serif;
+  background-color: black;
+  border-radius: 15px;
+  margin-top: 1%;
+  margin: 1%;
+  padding: 1%;
+  background-image: url("../../images/background.png");
+  background-attachment: fixed;
 }
