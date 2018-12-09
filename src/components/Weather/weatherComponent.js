@@ -10,27 +10,27 @@ const zipStringBuilder = (weather) => {
   return zipsBuilder;
 };
 
-const printSingleZip = (weather) => {
-  console.log(weather);
+const printSingleZip = (weather, zipId, isCurrent) => {
   let cardString = `
       <div class="card">
         <div class="card-body">
           <div class="zipContainer">
             <h5>${weather.city_name}, ${weather.state_code}</h5>
-            <img src="${weather.weather.icon}"></img>
+            <img src="https://www.weatherbit.io/static/img/icons/${weather.weather.icon}.png"></img>
             <p>${weather.temp}</p>
             <p>${weather.weather.description}</p>
           </div>
           <button class="btn btn-danger delete-weather-btn" data-weather-delete-id=${weather.id}>X</button>
           <div class="form-check form-check-inline">
           <label class="form-check-label" for="inlineCheckbox1">Current zipcode?</label>
-            <input class="form-check-input checkIsCurrent" type="checkbox" id="${weather.id}">
+            <input class="form-check-input checkIsCurrent" data-zip-id=${zipId} type="checkbox" id="${weather.id}">
           </div>
         </div>
       </div>
       `;
+  // const currentLocation = isCurrent;
   $('#singleZip').html(cardString);
-  if (weather.isCurrent) {
+  if (isCurrent === 'true') {
     $('.checkIsCurrent').attr('checked', true);
   }
   cardString += '<button id="addZip" class="btn btn-info">Add New Zipcode</button>';
@@ -49,10 +49,11 @@ const printSingleZip = (weather) => {
 
 const getWeatherbitData = (e) => {
   const zipcode = e.target.dataset.dropdownZip;
-  const currentLocation = e.target.dataset.isCurrent;
+  const currentZip = e.target.dataset.isCurrent;
+  const zipId = e.target.id;
   weatherData.getWeatherbit(zipcode)
     .then((weather) => {
-      printSingleZip(weather, currentLocation);
+      printSingleZip(weather, zipId, currentZip);
     })
     .catch((error) => {
       console.error('error getting weather', error);
@@ -82,6 +83,21 @@ const weatherPage = () => {
     .then((weatherArray) => {
       buildDropdown(weatherArray);
       zipStringBuilder(weatherArray);
+      const currentZip = weatherArray.filter(object => object.isCurrent === true);
+      if (currentZip !== undefined) {
+        const currentLocation = currentZip[0].zipcode;
+        const isCurrent = 'true';
+        const zipId = currentZip[0].id;
+        weatherData.getWeatherbit(currentLocation)
+          .then((weather) => {
+            printSingleZip(weather, zipId, isCurrent);
+          })
+          .catch((error) => {
+            console.error('error getting weather data', error);
+          });
+      } else {
+        $('#single-zip').html('Set a current location');
+      }
     })
     .catch((error) => {
       console.error('error in getting weather', error);
