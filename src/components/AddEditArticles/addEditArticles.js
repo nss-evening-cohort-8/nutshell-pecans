@@ -81,7 +81,7 @@ const updateArticle = (e) => {
   articlesData.updateArticle(updatedArticle, articleId)
     .then(() => {
       $('#add-edit-article').html('').hide();
-      $('#articles-container').html('');
+      $('#articlesContainer').html('');
       $('#articles').show();
       initializeArticlesPage();
     })
