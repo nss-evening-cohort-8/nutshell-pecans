@@ -17,6 +17,7 @@ const printSingleZip = (weather) => {
         <div class="card-body">
           <div class="zipContainer">
             <h5>${weather.city_name}, ${weather.state_code}</h5>
+            <img src="${weather.weather.icon}"></img>
             <p>${weather.temp}</p>
             <p>${weather.weather.description}</p>
           </div>
