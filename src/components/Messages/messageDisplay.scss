@@ -3,12 +3,13 @@
  margin: 20px;
  padding: 1%;
  color: white;
- font-family: 'Source Sans Pro', sans-serif;
+ font-family: 'BenchNine', sans-serif;
  background-image: url("../../images/background.png");
  background-attachment: fixed;
  #newMessages {
    border: 2px solid white;
    margin: 1%;
+   margin-right: 5px;
    padding: 1%;
    border-radius: 15px;
    overflow: auto;
@@ -17,7 +18,7 @@
    width: 100%;
    font-family: 'Source Sans Pro', sans-serif;
    small {
-     font-size: 12pt;
+     font-size: 16pt;
    }
  }
  #expandMessages {
@@ -35,4 +36,10 @@
    padding: 1%;
    width: 90%;
  }
+}
+.sendMessage {
+  width: 40x;
+  height: 35px;
+  margin-top: 14px;
+  border-radius: 15px;
 }
