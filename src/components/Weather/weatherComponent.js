@@ -28,24 +28,15 @@ const printSingleZip = (weather, zipId, isCurrent) => {
         </div>
       </div>
       `;
-  // const currentLocation = isCurrent;
   $('#singleZip').html(cardString);
+  console.log(isCurrent);
   if (isCurrent === 'true') {
     $('.checkIsCurrent').attr('checked', true);
+  // } else {
+  //   $('.checkIsCurrent').attr('unchecked', false);
   }
   cardString += '<button id="addZip" class="btn btn-info">Add New Zipcode</button>';
-  // $('#weather').html(cardString);
 };
-
-// const getSingleZip = (e) => {
-//   const zipId = e.target.dataset.dropdownId;
-//   weatherData.getSingleZip(zipId).then((singleZip) => {
-//     printSingleZip(singleZip);
-//   })
-//     .catch((error) => {
-//       console.error('error getting single zip', error);
-//     });
-// };
 
 const getWeatherbitData = (e) => {
   const zipcode = e.target.innerHTML * 1;
@@ -68,7 +59,7 @@ const buildDropdown = (weatherArray) => {
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">`;
   if (weatherArray.length) {
     weatherArray.forEach((weather) => {
-      dropdown += `<div class="dropdown-item get-single" data-dropdown-zip=${weather.zipcode} data-dropdown-zip-id=${weather.id}>${weather.zipcode}</div>`;
+      dropdown += `<div class="dropdown-item get-single" data-dropdown-is-current=${weather.isCurrent} data-dropdown-zip=${weather.zipcode} data-dropdown-zip-id=${weather.id}>${weather.zipcode}</div>`;
     });
   } else {
     dropdown += '<div class="dropdown-item">Add a zipcode</div>';
@@ -117,10 +108,11 @@ const deleteZips = (e) => {
 };
 
 const updateIsCurrent = (e) => {
-  const zipId = e.target.id;
+  const locationId = e.target.dataset.zipId;
   const isCurrent = e.target.checked;
-  weatherData.updateIsCurrent(zipId, isCurrent)
+  weatherData.updateIsCurrent(locationId, isCurrent)
     .then(() => {
+      weatherPage();
     })
     .catch((err) => {
       console.error('error in updating current zip', err);
