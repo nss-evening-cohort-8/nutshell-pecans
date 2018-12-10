@@ -14,6 +14,6 @@ npm install
 npm start
 ```
 
-### Screenshots
+## Screenshots
 
 ![homepage](./src/images/screenshot.png)
