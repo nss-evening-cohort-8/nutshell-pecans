@@ -19,7 +19,7 @@ const printAllEvents = (eventsArray) => {
             </div>`;
     $('#events').html(domString);
     if (event.isAttending) {
-      $('.is-avoiding-checkbox').attr('checked', true);
+      $('.is-attending-checkbox').attr('checked', true);
     }
   });
 };
@@ -30,7 +30,7 @@ const eventsPage = () => {
     .then((eventsArray) => {
       printAllEvents(eventsArray);
     }).catch((error) => {
-      console.error('error in getting tasks', error);
+      console.error('error in getting events', error);
     });
 };
 

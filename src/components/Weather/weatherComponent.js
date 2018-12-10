@@ -15,16 +15,18 @@ const printSingleZip = (weather, zipId, isCurrent) => {
   let cardString = `
       <div class="card">
         <div class="card-body">
+        <h1 class="events-header text-center">WEATHER</h1>
+
           <div class="zipContainer">
             <h5>${weather.city_name}, ${weather.state_code}</h5>
             <img src="https://www.weatherbit.io/static/img/icons/${weather.weather.icon}.png"></img>
             <p>${weather.temp}</p>
             <p>${weather.weather.description}</p>
           </div>
-          <button class="btn btn-danger delete-weather-btn" data-weather-delete-id=${weather.id}>X</button>
+          <button class="btn delete-weather-btn btn-danger" data-weather-delete-id=${weather.id}>X</button>
           <div class="form-check form-check-inline">
-          <label class="form-check-label" for="inlineCheckbox1">Current zipcode?</label>
-            <input class="form-check-input checkIsCurrent" data-zip-id=${zipId} type="checkbox" id="${weather.id}">
+          <label class="form-check-label" for="inlineCheckbox1">CURRENT ZIP?</label>
+            <input class="form-check-input checkIsCurrent" data-zip-id=${zipId} type="radio" id="${weather.id}">
           </div>
         </div>
       </div>
@@ -32,8 +34,8 @@ const printSingleZip = (weather, zipId, isCurrent) => {
   $('#singleZip').html(cardString);
   if (isCurrent === 'true') {
     $('.checkIsCurrent').attr('checked', true);
-  // } else {
-  //   $('.checkIsCurrent').attr('unchecked', false);
+    // } else {
+    //   $('.checkIsCurrent').attr('unchecked', false);
   }
   cardString += '<button id="addZip" class="btn btn-info">Add New Zipcode</button>';
 };
@@ -53,8 +55,8 @@ const getWeatherbitData = (e) => {
 
 const buildDropdown = (weatherArray) => {
   let dropdown = `<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Pick a Zipcode
+  <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  PICK A ZIP
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">`;
   if (weatherArray.length) {

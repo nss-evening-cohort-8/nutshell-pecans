@@ -19,6 +19,9 @@ const checkLoginStatus = (initializeUserApp) => {
       $('#weather').hide();
       $('#auth').show();
       $('#navbar-button-logout').hide();
+      $('#allArticlesContainer').hide();
+      $('#newMessages').hide();
+      $('messageContainer').hide();
     }
   });
 };
