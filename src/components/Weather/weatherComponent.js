@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import authHelpers from '../../helpers/authHelpers';
 import weatherData from '../../helpers/data/weatherData';
+import './weatherComponent.scss';
 
 const zipStringBuilder = (weather) => {
   let zipsBuilder = '<h3>Weather</h3>';
