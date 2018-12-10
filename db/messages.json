@@ -1,8 +1,15 @@
 {
   "message1": {
     "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
-    "message": "Welcome to the Dashboard and Messaging Network Nutshell!  Feel free to share a message on our D.A.M.N Nutshell :)",
+    "message": "Welcome to the Dashboard and Messaging Network Nutshell.",
     "timestamp": 1528763298535,
+    "isEdited": false,
+    "username": "Tim Harley"
+  },
+  "message2": {
+    "uid": "liJr4jWrLAhV4zKFmqYweZB5l5s2",
+    "message": "Feel free to share a message on our D.A.M.N Nutshell!",
+    "timestamp": 1528763298545,
     "isEdited": false,
     "username": "Tim Harley"
   }

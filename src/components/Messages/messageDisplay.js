@@ -16,8 +16,7 @@ const messageStringBuilder = () => {
         <button class="btn btn-secondary sendMessage" type="button" id="button-addon1">Send</button>
       </div>
       <input id="messageInputArea" type="text" class="form-control" placeholder="" aria-describedby="button-addon1">
-    </div>
-    <button id="expandMessages" type="button" class="btn btn-sm btn-light ml-auto">Expand</button>`;
+    </div>`;
   $('#messages').html(printString);
 };
 
