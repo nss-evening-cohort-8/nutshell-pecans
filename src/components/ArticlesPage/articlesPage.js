@@ -10,7 +10,7 @@ const articlesBuilder = (articlesArray) => {
   articlesArray.forEach((article) => {
     articleString += `
     <div class="card articleInfo d-flex">
-      <div class="card-body text-center">
+      <div class="card-body-article text-center">
         <h1 class="card-title"><b><u>${article.title}</u></h1>
         <p>${article.synopsis}</p>
         <h6><a href="${article.url}">View Article</a></h6>
