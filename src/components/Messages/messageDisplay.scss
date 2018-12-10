@@ -18,17 +18,14 @@
    width: 100%;
    font-family: 'Source Sans Pro', sans-serif;
    small {
-     font-size: 16pt;
+     font-size: .85em;
+     color: gray;
+   }
+   strong {
+     color: slateblue;
    }
  }
- #expandMessages {
-   background-color: transparent;
-   border: 0;
- }
- #expandMessages:hover {
-  color: white;
-  background-color: grey;
- }
+
  #messageInputArea {
    border: 1px solid black;
    border-radius: 10px;

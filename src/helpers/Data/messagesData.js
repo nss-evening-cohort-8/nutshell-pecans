@@ -1,6 +1,6 @@
 import axios from 'axios';
 import apiKeys from '../../../db/apiKeys.json';
-
+// .orderByChild('timestamp')
 const firebase = apiKeys.firebaseKeys.databaseURL;
 
 const getExistingMessages = () => new Promise((resolve, reject) => {
