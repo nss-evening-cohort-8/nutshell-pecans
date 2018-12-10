@@ -30,7 +30,7 @@ const initializeApp = () => {
   navbar();
   authHelpers.checkLoginStatus(initializeUserApp);
   loginButton();
-  $('body').on('click', '#add-articles', monkeyButt.buildAddArticleForm);
+  $('body').on('click', '#addArticles', monkeyButt.buildAddArticleForm);
   $('body').on('click', '.editArticlesButton', monkeyButt.showEditArticleForm);
 };
 

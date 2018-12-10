@@ -1,21 +1,45 @@
 #messages {
- background-color: lightgrey;
- border-radius: 5px;
+ border-radius: 15px;
  margin: 20px;
- padding: 5px;
+ padding: 1%;
+ color: white;
+ font-family: 'BenchNine', sans-serif;
+ background-image: url("../../images/background.png");
+ background-attachment: fixed;
  #newMessages {
-   border: 1px solid slategray;
-   border-radius: 5px;
-   background-color: white;
+   border: 2px solid white;
+   margin: 1%;
+   margin-right: 5px;
+   padding: 1%;
+   border-radius: 15px;
    overflow: auto;
-   margin-bottom: 5px;
-   height: 120px;
+   margin-top: 5px;
+   height: 240px;
    width: 100%;
+   font-family: 'Source Sans Pro', sans-serif;
    small {
-     font-size: .33em;
+     font-size: 16pt;
    }
  }
- #messageInputArea {
-   border: 1px solid slategray;
+ #expandMessages {
+   background-color: transparent;
+   border: 0;
  }
+ #expandMessages:hover {
+  color: white;
+  background-color: grey;
+ }
+ #messageInputArea {
+   border: 1px solid black;
+   border-radius: 10px;
+   margin: 1%;
+   padding: 1%;
+   width: 90%;
+ }
+}
+.sendMessage {
+  width: 40x;
+  height: 35px;
+  margin-top: 14px;
+  border-radius: 15px;
 }

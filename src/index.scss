@@ -5,6 +5,7 @@
 body {
   background-color: $darkgray;
   font-family: 'BenchNine', sans-serif;
+  background-image: url("../src/images/home_screen.png")
 }
 
 .addEvent {
@@ -12,6 +13,8 @@ body {
   margin-top: 15px;
 }
 
-// #add-edit-event {
-//   background-image: url("../src/images/1.jpg");
-// }
+#editZipForm { 
+  margin: 1%;
+
+}
+
