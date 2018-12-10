@@ -39,11 +39,14 @@ const addNewEvent = eventObject => axios.post(`${firebaseUrl}/events.json`, JSON
 
 const updateEvent = (eventObject, eventId) => axios.put(`${firebaseUrl}/events/${eventId}.json`, JSON.stringify(eventObject));
 
+const updatedIsAttending = (eventId, isAttending) => axios.patch(`${firebaseUrl}/events/${eventId}.json`, { isAttending });
+
 export default {
   getAllEvents,
   deleteEvent,
   getSingleEvent,
   addNewEvent,
   updateEvent,
+  updatedIsAttending,
 
 };
