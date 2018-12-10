@@ -45,6 +45,9 @@ const buildAddEventForm = () => {
   domString += '<button id="add-event" class="formButton">ADD EVENT</button>';
   $('#add-edit-event').html(domString).show();
   $('#events').hide();
+  $('#messages').hide();
+  $('#articles').hide();
+  $('#weather').hide();
 };
 
 const addNewEvent = () => {
@@ -88,6 +91,9 @@ const showEditForm = (e) => {
       domString += `<button id="edit-event" data-single-edit-id=${singleEvent.id}>Save Event</button>`;
       $('#add-edit-event').html(domString).show();
       $('#events').hide();
+      $('#messages').hide();
+      $('#articles').hide();
+      $('#weather').hide();
     })
     .catch((error) => {
       console.error('error in getting single for edit', error);

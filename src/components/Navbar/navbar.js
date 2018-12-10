@@ -24,6 +24,8 @@ const navbarEvents = () => {
       $('#messages').hide();
       $('#articles').hide();
       $('#weather').hide();
+      $('#allArticlesContainer').hide();
+      $('#single-event-container').hide();
     }
   });
 };
