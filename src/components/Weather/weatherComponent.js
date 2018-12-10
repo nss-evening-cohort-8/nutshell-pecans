@@ -48,9 +48,9 @@ const printSingleZip = (weather, zipId, isCurrent) => {
 // };
 
 const getWeatherbitData = (e) => {
-  const zipcode = e.target.dataset.dropdownZip;
-  const currentZip = e.target.dataset.isCurrent;
-  const zipId = e.target.id;
+  const zipcode = e.target.innerHTML * 1;
+  const currentZip = e.target.dataset.dropdownIsCurrent;
+  const zipId = e.target.dataset.dropdownZipId;
   weatherData.getWeatherbit(zipcode)
     .then((weather) => {
       printSingleZip(weather, zipId, currentZip);
@@ -63,12 +63,12 @@ const getWeatherbitData = (e) => {
 const buildDropdown = (weatherArray) => {
   let dropdown = `<div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Pick a Zipcode
+  Pick a Zipcode
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">`;
   if (weatherArray.length) {
     weatherArray.forEach((weather) => {
-      dropdown += `<div class="dropdown-item get-single" data-dropdown-zip=${weather.zipcode}>${weather.zipcode}</div>`;
+      dropdown += `<div class="dropdown-item get-single" data-dropdown-zip=${weather.zipcode} data-dropdown-zip-id=${weather.id}>${weather.zipcode}</div>`;
     });
   } else {
     dropdown += '<div class="dropdown-item">Add a zipcode</div>';
