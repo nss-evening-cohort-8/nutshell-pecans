@@ -29,7 +29,6 @@ const printSingleZip = (weather, zipId, isCurrent) => {
       </div>
       `;
   $('#singleZip').html(cardString);
-  console.log(isCurrent);
   if (isCurrent === 'true') {
     $('.checkIsCurrent').attr('checked', true);
   // } else {
