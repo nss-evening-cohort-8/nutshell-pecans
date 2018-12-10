@@ -29,14 +29,14 @@ const gettingMessages = () => {
       messagesArray.forEach((message) => {
         const time = moment(message.timestamp).calendar();
         messages += `<div>
-        <strong>${message.username}:</strong> ${message.message} <small>${time}</small>`;
+        <p><strong>${message.username}:</strong> ${message.message} <small>${time}</small>`;
         if (message.uid === firebase.auth().currentUser.uid) {
           messages += `
             <input class="editMessageButton pt-1 ml-2" data-edit-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/230/230330.svg" width="15px" height="27px"></input>
-            <input class="deleteMessageButton pt-1" data-delete-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/248/248953.svg" width="15px" height="25px"></input>
+            <input class="deleteMessageButton pt-1" data-delete-id=${message.id} type="image" src="https://image.flaticon.com/icons/svg/248/248953.svg" width="15px" height="25px"></input></p>
           </div>`;
         } else {
-          messages += '</div>';
+          messages += '</p></div>';
         }
       });
       $('#newMessages').html(messages);
