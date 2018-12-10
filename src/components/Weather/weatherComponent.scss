@@ -1,0 +1,82 @@
+#weather { 
+  background-color: black;
+  border-radius: 15px;
+  width: 50%;
+  font-family: 'BenchNine', sans-serif;
+  border: 2px solid grey;
+  padding: 1%;
+  margin-bottom: 2%;
+}
+
+.card-body {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.zipContainer {
+  background-color: black;
+  color: white;
+  margin: 1%;
+  padding: 2%;
+  font-family: 'BenchNine', sans-serif;
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 16pt;
+  background-image: url("../../images/weather.png");
+  
+}
+
+.card {
+  background-color: black;
+  color: white;
+  font-family: 'BenchNine', sans-serif;
+}
+
+.dropdown-menu {
+  padding: 1%;
+}
+
+.dropdownMenuButton {
+  padding: 1%;
+  border-radius: 10px;
+}
+.dropdown {
+  margin: 1%;
+  padding: 1%;
+  border-radius: 10px;
+}
+.dropdown-item {
+  margin: 1%;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+#addZipBtn {
+  margin-bottom: 5px;
+  border-radius: 10px;
+  margin-left: 2%
+}
+
+#editZipForm { 
+  margin: 1%;
+  padding: 1%;
+}
+#saveZip {
+  border-radius: 10px;
+  background-color: grey;
+  color: white;
+}
+#addEditZip {
+  color: white;
+  padding-top: 9px;
+}
+.delete-weather-btn {
+  border-radius: 10px;
+}
+.dropdown-toggle {
+  border-radius: 10px;
+}
+
+

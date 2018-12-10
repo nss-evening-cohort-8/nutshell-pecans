@@ -11,9 +11,10 @@ import messageData from '../../helpers/data/messagesData';
 const messageStringBuilder = () => {
   const printString = `
     <div id="newMessages"></div>
+    <h1 class="events-header text-center">MESSAGES</h1>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <button class="btn btn-secondary sendMessage" type="button" id="button-addon1">Send</button>
+        <button class="btn btn-secondary sendMessage" type="button" id="button-addon1">SEND</button>
       </div>
       <input id="messageInputArea" type="text" class="form-control" placeholder="" aria-describedby="button-addon1">
     </div>
