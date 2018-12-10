@@ -34,8 +34,6 @@ const printSingleZip = (weather, zipId, isCurrent) => {
   $('#singleZip').html(cardString);
   if (isCurrent === 'true') {
     $('.checkIsCurrent').attr('checked', true);
-    // } else {
-    //   $('.checkIsCurrent').attr('unchecked', false);
   }
   cardString += '<button id="addZip" class="btn btn-info">Add New Zipcode</button>';
 };
