@@ -1,6 +1,7 @@
 
 import $ from 'jquery';
 import authHelpers from '../../helpers/authHelpers';
+import './addEditArticles.scss';
 import articlesData from '../../helpers/data/articlesData';
 import initializeArticlesPage from '../ArticlesPage/articlesPage';
 
@@ -80,7 +81,7 @@ const updateArticle = (e) => {
   articlesData.updateArticle(updatedArticle, articleId)
     .then(() => {
       $('#add-edit-article').html('').hide();
-      $('#articles-container').html('');
+      $('#articlesContainer').html('');
       $('#articles').show();
       initializeArticlesPage();
     })
