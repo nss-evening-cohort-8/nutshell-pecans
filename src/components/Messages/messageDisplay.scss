@@ -1,19 +1,19 @@
 #messages {
- background-color: black;
  border-radius: 15px;
  margin: 20px;
- padding: 5px;
+ padding: 1%;
  color: white;
  font-family: 'Source Sans Pro', sans-serif;
+ background-image: url("../../images/background.png");
+ background-attachment: fixed;
  #newMessages {
-   border: 1px solid white;
+   border: 2px solid white;
    margin: 1%;
    padding: 1%;
    border-radius: 15px;
-   background-color: black;
    overflow: auto;
-   margin-bottom: 5px;
-   height: 120px;
+   margin-top: 5px;
+   height: 240px;
    width: 100%;
    font-family: 'Source Sans Pro', sans-serif;
    small {
@@ -26,11 +26,13 @@
  }
  #expandMessages:hover {
   color: white;
-  background-color: black;
+  background-color: grey;
  }
  #messageInputArea {
    border: 1px solid black;
+   border-radius: 10px;
    margin: 1%;
    padding: 1%;
+   width: 90%;
  }
 }
