@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import 'bootstrap';
 import './articlesPage.scss';
-// import authHelpers from '../../helpers/authHelpers';
+import authHelpers from '../../helpers/authHelpers';
 import articlesData from '../../helpers/data/articlesData';
 
 const articlesBuilder = (articlesArray) => {
@@ -20,12 +20,12 @@ const articlesBuilder = (articlesArray) => {
     </div>
   `;
   });
-  $('#articles').html(articleString);
+  $('#articles-container').html(articleString);
 };
 
 const articlesPage = () => {
-  // const uid = authHelpers.getCurrentUid();
-  articlesData.getAllArticles()
+  const uid = authHelpers.getCurrentUid();
+  articlesData.getAllArticles(uid)
     .then((articlesArray) => {
       articlesBuilder(articlesArray);
     })
