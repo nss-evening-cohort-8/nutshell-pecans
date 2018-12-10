@@ -26,7 +26,7 @@ const printSingleZip = (weather, zipId, isCurrent) => {
           <button class="btn delete-weather-btn btn-danger" data-weather-delete-id=${weather.id}>X</button>
           <div class="form-check form-check-inline">
           <label class="form-check-label" for="inlineCheckbox1">CURRENT ZIP?</label>
-            <input class="form-check-input checkIsCurrent" data-zip-id=${zipId} type="radio" id="${weather.id}">
+            <input class="form-check-input checkIsCurrent" data-zip-id=${zipId} type="checkbox" id="${weather.id}">
           </div>
         </div>
       </div>
@@ -34,8 +34,6 @@ const printSingleZip = (weather, zipId, isCurrent) => {
   $('#singleZip').html(cardString);
   if (isCurrent === 'true') {
     $('.checkIsCurrent').attr('checked', true);
-    // } else {
-    //   $('.checkIsCurrent').attr('unchecked', false);
   }
   cardString += '<button id="addZip" class="btn btn-info">Add New Zipcode</button>';
 };
