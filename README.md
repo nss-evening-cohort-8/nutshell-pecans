@@ -16,8 +16,8 @@ npm start
 
 ## Screenshots
 
-![homepage](./src/images/screenshot1.png)
-![events](./src/images/screenshot2.png)
-![add events](./src/images/screenshot3.png)
-![chat articles](./src/images/screenshot4.png)
-![weather](./src/images/screenshot5.png)
+![homepage](./src/images/ss1.png)
+![events](./src/images/ss2.png)
+![add events](./src/images/ss3.png)
+![chat articles](./src/images/ss4.png)
+![weather](./src/images/ss5.png)
