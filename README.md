@@ -1,5 +1,5 @@
 # nutshell
-This is group project is a single page application that incorporates Firebase CRUD to authenticate and interact with multiple components. 
+This is group project that was built as a single page application that incorporates Firebase CRUD to authenticate and interact with multiple components. 
 
 ### How to run this app
 * Clone the project and install all dependencies using the command line:
@@ -16,4 +16,8 @@ npm start
 
 ## Screenshots
 
-![homepage](./src/images/screenshot.JPG)
+![homepage](./src/images/screenshot1.png)
+![events](./src/images/screenshot2.png)
+![add events](./src/images/screenshot3.png)
+![chat articles](./src/images/screenshot4.png)
+![weather](./src/images/screenshot5.png)
